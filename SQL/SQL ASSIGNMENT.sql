@@ -211,4 +211,7 @@ where salary<60000;
 drop table project;
 
 --qn50
+EXEC sp_helpdb AdventureWorksLT2025;
+
+Drop database AdventureWorksLT2025;
 
