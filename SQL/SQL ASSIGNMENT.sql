@@ -175,7 +175,22 @@ select top 3 *from emp
 order by hire_date;
 
 --qn42
+select * from emp
+order by emp_id
+OFFSET 3 ROWS
+FETCH NEXT 3 ROWS ONLY;
 
+--qn43
+SELECT name, sal,
+IIF(sal >= 70000, 'High', 'Low') AS Salary_Level from emp;
+
+--qn44
+select project_name, budget,
+case
+    WHEN budget >= 60000 THEN 'Large'
+    WHEN budget >= 40000 THEN 'Medium'
+    ELSE 'Small'
+end AS Budget_Category from projects;
 --qn45
 select dept_id, sum(budget) from project
 group by dept_id;
